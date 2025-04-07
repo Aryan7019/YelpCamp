@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+
+<h1 class="text-center"> NEW CAMPGROUND </h1>
+
+<form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+
+   <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input class="input form-control" type="text" name="campground[title]" id="title" required>
+      <div id="title" class="invalid-feedback">Please choose a title!</div>
+   </div>
+
+   <div class="mb-3">
+      <label class="form-label">Location</label>
+      <input class="input form-control" type="text" name="campground[location]" id="location" required>
+      <div id="location" class="invalid-feedback">Please provide a location!</div>
+   </div>
+
+   <div class="input-group mb-3">
+      <label class="form-label">Price</label>
+      <div class="input-group">
+         <span class="input-group-text">$</span>
+         <input class="input form-control" type="number" name="campground[price]" id="price" placeholder="0.00" min="0" required>
+         <div id="price" class="invalid-feedback">Please set a price!</div>
+      </div>
+   </div>
+
+   <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="textarea form-control" name="campground[description]" id="description" required></textarea>
+      <div id="description" class="invalid-feedback">Please give a description!</div>
+   </div>
+
+   <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupFile01">Image(s)</label>
+      <input type="file" name="image" class="form-control" id="inputGroupFile01" multiple>
+    </div>
+
+   <div class="mb-3 d-flex justify-content-between">
+      <button type="submit" class="btn btn-success">Add Campground</button>
+      <a href="/campgrounds" class="btn btn-warning float-end">Cancel</a>
+   </div>
+</form>
+
+

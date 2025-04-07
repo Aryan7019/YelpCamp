@@ -1,0 +1,48 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center mt-3">
+   <div class="row w-100">
+      <div class="col-12 col-md-6 col-lg-3 mx-auto"> <!-- Adjusted column width -->
+         <div class="card shadow" style=" margin-bottom: 50px; transition: none; transform: none; margin-bottom: 1cm !important; ">
+            <img src="https://images.unsplash.com/photo-1657664069060-706017d35842?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" style="height: 250px; object-fit: cover; object-position: top;">
+            <div class="card-body">
+               <h1 class="card-title text-center">Register</h1>
+
+               <!-- Login Form -->
+               <form action="/register" method="post" class="validated-form" novalidate>
+
+                  <div class="mb-3 mt-4">
+                     <label class="form-label">Username</label>
+                     <input class="input form-control" type="text" name="username" id="username" autofocus required>
+                     <div id="username" class="invalid-feedback">Enter a Username</div>
+                   </div>
+               
+                   <div class="mb-3">
+                     <label class="form-label">Email</label>
+                     <input class="input form-control" type="text" name="email" id="email" required>
+                     <div id="email" class="invalid-feedback">Enter a Email</div>
+                   </div>
+               
+                   <div class="mb-3">
+                     <label class="form-label">Password</label>
+                     <input class="input form-control" type="text" name="password" id="password" required>
+                     <div id="password" class="invalid-feedback">Enter a Password</div>
+                   </div>
+                   <button class="btn btn-success btn-block">Register</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<style>
+   @media (max-width: 360px) {
+      .container {
+         padding-left: 0;
+         padding-right: 0;
+      }
+      .card {
+         width: 100%;  /* Ensure the card takes up full width */
+      }
+   }
+</style>
